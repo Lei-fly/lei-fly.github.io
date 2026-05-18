@@ -1,20 +1,21 @@
 # Jekyll 配置文件
 # Just the Docs 主题
 
-title: 我的知识库
-description: Hermes 管理的技术笔记与随笔
+title: Lei-fly 的主页
+description: GitHub Pages 个人主页与知识库
 theme: just-the-docs
 
 # 启用深色/浅色模式切换
 color_scheme: nil
-# 允许用户手动切换主题
-heading_anchors: true
+
 # 启用搜索功能
 search_enabled: true
-# 搜索分词
 search.tokenizer_separator: /[\s/]+/
+
 # 启用最后一项更新时间
 last_edit_timestamp: true
+last_edit_time_format: "%Y-%m-%d %H:%M"
+
 # 显示编辑链接
 gh_edit_link: true
 gh_edit_link_text: "在 GitHub 上编辑此页"
@@ -29,19 +30,13 @@ plugins:
 
 # 排除文件
 exclude:
-  - README.md
+  - Gemfile
+  - Gemfile.lock
   - .gitignore
+  - README.md
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - .gitignore
 
 # Markdown 处理器
 markdown: kramdown
@@ -52,12 +47,12 @@ kramdown:
 # 语言
 lang: zh-CN
 
-# giscus 评论配置
+# giscus 评论配置（需要在 GitHub Discussions 启用后获取实际 ID）
 giscus:
   repo: "Lei-fly/lei-fly.github.io"
-  repo-id: "R_kgDONXXXXX"  # 需要替换为实际的 repo-id
+  repo-id: "R_kgDONXXXXX"  # 替换为实际的 repo-id
   category: "Announcements"
-  category-id: "DIC_kwDONXXXXX"  # 需要替换为实际的 category-id
+  category-id: "DIC_kwDONXXXXX"  # 替换为实际的 category-id
   mapping: "pathname"
   strict: "0"
   reactions-enabled: "1"
@@ -72,9 +67,17 @@ nav_external_links:
     url: https://github.com/Lei-fly/lei-fly.github.io
     hide_arrow: true
 
-# 默认前端页面
+# Just the Docs 特定配置
 defaults:
   - scope:
       path: "notes"
     values:
       layout: "default"
+      comments: true
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# 外部链接
+heading_anchors: true
